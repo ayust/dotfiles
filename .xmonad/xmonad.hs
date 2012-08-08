@@ -12,7 +12,7 @@ myManageHook = composeAll
     ]
 
 main = do
-    xmproc <- spawnPipe "/usr/bin/xmobar /home/aiiane/.xmobarrc"
+    xmproc <- spawnPipe "/usr/bin/xmobar /home/aiiane/.xmonad/.xmobarrc"
     xmonad $ defaultConfig
         { manageHook = manageDocks <+> myManageHook
                         <+> manageHook defaultConfig
