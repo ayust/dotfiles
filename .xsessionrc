@@ -13,11 +13,13 @@ if [ -x /usr/bin/nm-applet ] ; then
    nm-applet --sm-disable &
 fi
 
+# Bluetooth manager
+if [ -x /usr/bin/bluetooth-applet ] ; then
+   bluetooth-applet &
+fi
+
 # Power manager
 if [ -x /usr/bin/gnome-power-manager ] ; then
    sleep 3
    gnome-power-manager &
 fi
-
-# Auto-lock after 10 minutes
-xautolock -detectsleep -corners 000- &
