@@ -10,7 +10,9 @@ set expandtab
 set autoindent
 set smartindent
 
+set incsearch
 set ignorecase smartcase
+
 function! CleverTab()
   if strpart( getline('.'), col('.')-2, col('.')-1 ) =~ '^\s*$'
     return "\<Tab>"
