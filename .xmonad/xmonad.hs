@@ -8,6 +8,7 @@ import System.IO
 myManageHook = composeAll
     [ className =? "Gimp"      --> doFloat
     , className =? "Vncviewer" --> doFloat
+    , title =? "pterm Reconfiguration" --> doFloat
     ]
 
 main = do
