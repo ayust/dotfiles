@@ -21,3 +21,5 @@ inoremap <Tab> <C-R>=CleverTab()<CR>
 
 set modeline
 set modelines=3
+
+filetype on
