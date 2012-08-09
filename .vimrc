@@ -25,9 +25,9 @@ set ruler
 set mouse=a
 
 " Use 'tabs are actually 4 spaces' and intelligent indenting
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=8
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set autoindent
 set smartindent
@@ -95,3 +95,10 @@ autocmd BufWrite *.py :call DeleteTrailingWS()
 
 " Automatically reload .vimrc when it is saved
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
+
+
+" GOOGLE-SPECIFIC FUNCTIONALITY
+""""""""""""""""""""""""""""""""""""""""""""""""""
+if filereadable("/usr/share/vim/google/google.vim")
+  source /usr/share/vim/google/google.vim
+endif
