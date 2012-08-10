@@ -63,6 +63,18 @@ set wildignore=*.o,*~,*.pyc,*.pyo,*.class,*.hi
 " KEYBINDINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
+" Unbind the arrow keys (old habits die hard)
+noremap <left> <nop>
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <right> <nop>
+
+" Bind jk/kj in insert to <esc> and then unbind <esc>
+inoremap jk <esc>
+inoremap kj <esc>
+inoremap <esc> <nop>
+
+
 " Use the comma key for extra key combos
 let mapleader = ","
 let g:mapleader = ","
@@ -86,24 +98,27 @@ iabbrev tahn than
 " TRIGGERED ACTIONS
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-" Remember info about open buffers on close...
-set viminfo^=%
-" and return to last edit position when opening files
-autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
+if !exists("vimrc_autocmds_loaded")
+  let vimrc_autocmds_loaded = 1
+  " Remember info about open buffers on close...
+  set viminfo^=%
+  " and return to last edit position when opening files
+  autocmd BufReadPost *
+       \ if line("'\"") > 0 && line("'\"") <= line("$") |
+       \   exe "normal! g`\"" |
+       \ endif
 
-" Delete trailing whitespace on save in .py files
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
-autocmd BufWrite *.py :call DeleteTrailingWS()
+  " Delete trailing whitespace on save in .py files
+  func! DeleteTrailingWS()
+    exe "normal mz"
+    %s/\s\+$//ge
+    exe "normal `z"
+  endfunc
+  autocmd BufWrite *.py :call DeleteTrailingWS()
 
-" Automatically reload .vimrc when it is saved
-autocmd BufWritePost $MYVIMRC source $MYVIMRC
+  " Automatically reload .vimrc when it is saved
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
+endif
 
 
 " GOOGLE-SPECIFIC FUNCTIONALITY
