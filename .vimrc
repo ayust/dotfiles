@@ -19,7 +19,7 @@ colorscheme xoria256
 syntax on
 
 " Turn on line numbering and position indicators...
-set number
+set number numberwidth=6
 set ruler
 " And enable mouse support to prevent copying line numbers, etc
 set mouse=a
@@ -71,7 +71,16 @@ let g:mapleader = ","
 noremap <leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " ,ss = toggle spell check
-map <leader>ss :setlocal spell!<cr>
+noremap <leader>ss :setlocal spell!<cr>
+
+
+" ABBREVIATIONS (Mostly typo fixes)
+""""""""""""""""""""""""""""""""""""""""""""""""""
+iabbrev waht what
+iabbrev adn and
+iabbrev tehn then
+iabbrev taht that
+iabbrev tahn than
 
 
 " TRIGGERED ACTIONS
@@ -101,4 +110,8 @@ autocmd BufWritePost $MYVIMRC source $MYVIMRC
 """"""""""""""""""""""""""""""""""""""""""""""""""
 if filereadable("/usr/share/vim/google/google.vim")
   source /usr/share/vim/google/google.vim
+endif
+if filereadable("/usr/share/vim/google/gtags.vim")
+  source /usr/share/vim/google/gtags.vim
+  nnoremap <C-]> :call Gtag(expand('<cword>'))<CR>
 endif
