@@ -98,8 +98,9 @@ iabbrev tahn than
 " TRIGGERED ACTIONS
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-if !exists("vimrc_autocmds_loaded")
-  let vimrc_autocmds_loaded = 1
+" These are grouped to prevent duplication when sourcing
+augroup vimrc
+  autocmd!
   " Remember info about open buffers on close...
   set viminfo^=%
   " and return to last edit position when opening files
@@ -118,7 +119,7 @@ if !exists("vimrc_autocmds_loaded")
 
   " Automatically reload .vimrc when it is saved
   autocmd BufWritePost $MYVIMRC source $MYVIMRC
-endif
+augroup END
 
 
 " GOOGLE-SPECIFIC FUNCTIONALITY
