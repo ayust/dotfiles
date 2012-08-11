@@ -22,10 +22,10 @@ main = do
                         , ppTitle = xmobarColor "green" "" . shorten 50
                         }
         , modMask = mod4Mask     -- Rebind Mod to the Windows key
+        , terminal = "pterm"
         } `additionalKeys`
         [ ((mod4Mask .|. shiftMask, xK_z), spawn "/usr/bin/gnome-screensaver-command -l")
         , ((mod4Mask .|. shiftMask, xK_i), spawn "/usr/bin/fetchotp -x")
-        , ((mod4Mask .|. shiftMask, xK_Return), spawn "/usr/bin/pterm")
         , ((controlMask, xK_Print), spawn "sleep 0.2; /usr/bin/scrot -s")
         , ((0, xK_Print), spawn "/usr/bin/scrot")
         ]
