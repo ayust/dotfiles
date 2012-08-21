@@ -41,7 +41,7 @@ set ignorecase smartcase
 
 " Tab completion when in insert mode and not indenting
 function! CleverTab()
-  if strpart( getline('.'), col('.')-2, col('.')-1 ) =~ '^\s*$'
+  if strpart( getline('.'), col('.')-2, 1 ) =~ '\s'
     return "\<Tab>"
   else
     return "\<C-N>"
@@ -72,7 +72,6 @@ noremap <right> <nop>
 " Bind jk/kj in insert to <esc> and then unbind <esc>
 inoremap jk <esc>
 inoremap kj <esc>
-inoremap <esc> <nop>
 
 
 " Use the comma key for extra key combos
