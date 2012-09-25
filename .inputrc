@@ -1,4 +1,10 @@
+$if term=screen
+set enable-keypad on
+"\e[D": backward-word
+"\e[C": forward-word
+$else
 "\eOD": backward-word
 "\eOC": forward-word
+$endif
 "\e[1~": beginning-of-line
 "\e[4~": end-of-line
