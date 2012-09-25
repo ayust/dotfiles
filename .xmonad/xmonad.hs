@@ -1,10 +1,21 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
-import XMonad.Util.Run(spawnPipe)
+import XMonad.Util.Dmenu
 import XMonad.Util.EZConfig(additionalKeys)
+import XMonad.Util.Run(spawnPipe)
+
+import System.Exit
 import System.IO
+
+import Control.Monad
 import Graphics.X11.ExtraTypes.XF86
+
+quitWithWarning :: X()
+quitWithWarning = do
+  let m = "confirm quit"
+  s <- dmenu [m]
+  when (m == s) (io exitSuccess)
 
 myManageHook = composeAll
     [ className =? "Gimp"      --> doFloat
@@ -27,6 +38,7 @@ main = do
         } `additionalKeys`
         [ ((mod4Mask .|. shiftMask, xK_z), spawn "/usr/bin/gnome-screensaver-command -l")
         , ((mod4Mask .|. shiftMask, xK_i), spawn "/usr/bin/fetchotp -x")
+        , ((mod4Mask .|. shiftMask, xK_q), quitWithWarning)
         , ((0, xF86XK_AudioLowerVolume), spawn "/usr/bin/amixer set Master 2dB-")
         , ((0, xF86XK_AudioRaiseVolume), spawn "/usr/bin/amixer set Master 2dB+")
         , ((0, xF86XK_AudioMute), spawn "/usr/bin/amixer set Master toggle")
