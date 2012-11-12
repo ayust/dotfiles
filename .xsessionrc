@@ -26,5 +26,8 @@ fi
 if [ -x /usr/bin/gnome-volume-control-applet ] ; then
    gnome-volume-control-applet &
 fi
+if [ -x /usr/bin/gnome-sound-applet ] ; then
+   gnome-sound-applet &
+fi
 
 # vim: set syntax=sh ts=3 sts=3 sw=3 et:
