@@ -1,9 +1,13 @@
 # regular cusor
 xsetroot -cursor_name left_ptr
 
+if [ -f "$HOME/.fehbg" ]; then
+   eval "$(cat ~/.fehbg)"
+fi
+
 # Notification tray
-trayer --edge top --align right --SetDockType true --SetPartialStrut true \
- --expand true --width 10 --transparent true --tint 0x191970 --height 12 &
+trayer --edge top --align right --SetDockType true --SetPartialStrut false \
+ --expand true --width 10 --transparent true --tint 0x494970 --height 1h &
 
 sleep 0.3
 
@@ -22,7 +26,7 @@ if [ -x /usr/bin/gnome-power-manager ] ; then
    gnome-power-manager &
 fi
 
-# Volume control
+# volume control
 if [ -x /usr/bin/gnome-volume-control-applet ] ; then
    gnome-volume-control-applet &
 fi
