@@ -27,10 +27,11 @@ if [ -x /usr/bin/gnome-power-manager ] ; then
 fi
 
 # volume control
-if [ -x /usr/bin/gnome-volume-control-applet ] ; then
+if [ -x /usr/bin/volti ] ; then
+   /usr/bin/volti &
+elif [ -x /usr/bin/gnome-volume-control-applet ] ; then
    /usr/bin/gnome-volume-control-applet &
-fi
-if [ -x /usr/bin/gnome-sound-applet ] ; then
+elif [ -x /usr/bin/gnome-sound-applet ] ; then
    /usr/bin/gnome-sound-applet &
 fi
 
