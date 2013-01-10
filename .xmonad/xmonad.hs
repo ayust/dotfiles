@@ -3,6 +3,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
+import XMonad.Layout.NoBorders
 import XMonad.Util.Dmenu
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Util.Run(spawnPipe)
@@ -31,7 +32,7 @@ main = do
     xmonad $ defaultConfig
         { manageHook = manageDocks <+> myManageHook
                         <+> manageHook defaultConfig
-        , layoutHook = avoidStruts  $  layoutHook defaultConfig
+        , layoutHook = avoidStruts  $  smartBorders  $  layoutHook defaultConfig
         , handleEventHook = fullscreenEventHook
         , logHook = dynamicLogWithPP xmobarPP
                         { ppOutput = hPutStrLn xmproc
