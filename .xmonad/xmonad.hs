@@ -1,5 +1,6 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Dmenu
 import XMonad.Util.EZConfig(additionalKeys)
@@ -29,6 +30,7 @@ main = do
         { manageHook = manageDocks <+> myManageHook
                         <+> manageHook defaultConfig
         , layoutHook = avoidStruts  $  layoutHook defaultConfig
+        , handleEventHook = fullscreenEventHook
         , logHook = dynamicLogWithPP xmobarPP
                         { ppOutput = hPutStrLn xmproc
                         , ppTitle = xmobarColor "green" "" . shorten 50
