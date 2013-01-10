@@ -23,5 +23,5 @@ Config { font = "xft:DejaVu Sans Mono:size=7"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %cpu% | %memory% * %swap% | %battery%    <fc=#ee9a00>%date%</fc> | %KSFO%"
+       , template = "%StdinReader% }{ %cpu% | %memory% / %swap% | %battery%    <fc=#ee9a00>%date%</fc> | %KSFO%"
        }
