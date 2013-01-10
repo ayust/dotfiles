@@ -44,6 +44,7 @@ main = do
         , ((mod4Mask .|. shiftMask, xK_x), spawn "/usr/bin/gksudo /usr/sbin/pm-suspend-hybrid")
         , ((mod4Mask .|. shiftMask, xK_i), spawn "/usr/bin/fetchotp -x")
         , ((mod4Mask .|. shiftMask, xK_q), quitWithWarning)
+        , ((mod4Mask, xK_b), sendMessage ToggleStruts)
         , ((0, xF86XK_AudioLowerVolume), spawn "/usr/bin/amixer set Master 2dB-")
         , ((0, xF86XK_AudioRaiseVolume), spawn "/usr/bin/amixer set Master 2dB+")
         , ((0, xF86XK_AudioMute), spawn "/usr/bin/amixer set Master toggle")
