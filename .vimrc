@@ -4,7 +4,9 @@
 "                                                            "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-call pathogen#infect()
+if filereadable("~/.vim/autoload/pathogen.vim")
+  call pathogen#infect()
+endif
 
 " UTF-8 is the future
 set encoding=utf8
