@@ -4,7 +4,7 @@
 "                                                            "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-if filereadable("~/.vim/autoload/pathogen.vim")
+if filereadable($HOME . "/.vim/autoload/pathogen.vim")
   call pathogen#infect()
 endif
 
