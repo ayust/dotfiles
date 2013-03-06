@@ -4,6 +4,8 @@
 "                                                            "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+call pathogen#infect()
+
 " UTF-8 is the future
 set encoding=utf8
 
@@ -64,12 +66,12 @@ set wildignore=*.o,*~,*.pyc,*.pyo,*.class,*.hi
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " Unbind the arrow keys (old habits die hard)
-noremap <left> <nop>
-noremap <up> <nop>
-noremap <down> <nop>
-noremap <right> <nop>
+noremap <left> <C-w><left>
+noremap <up> <C-w><up>
+noremap <down> <C-w><down>
+noremap <right> <C-w><right>
 
-" Bind jk/kj in insert to <esc> and then unbind <esc>
+" Bind jk/kj in insert to <esc>
 inoremap jk <esc>
 inoremap kj <esc>
 
