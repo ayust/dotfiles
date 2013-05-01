@@ -1,17 +1,3 @@
-# PuTTY/pterm-style ctrl+arrows handling
-$if term=screen
-set enable-keypad on
-"\e[D": backward-word
-"\e[C": forward-word
-$else
-"\eOD": backward-word
-"\eOC": forward-word
-$endif
-
-# xterm-style ctrl+arrows handling
-"\e[1;5D": backward-word
-"\e[1;5C": forward-word
-
 # Home/End
 "\e[1~": beginning-of-line
 "\e[4~": end-of-line
