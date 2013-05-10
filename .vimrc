@@ -88,6 +88,9 @@ noremap <leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 " ,ss = toggle spell check
 noremap <leader>ss :setlocal spell!<cr>
 
+" ,80 = set window width to 80 (plus room for gutter)
+noremap <leader>80 :vertical resize 86<cr>
+
 
 " ABBREVIATIONS (Mostly typo fixes)
 """"""""""""""""""""""""""""""""""""""""""""""""""
