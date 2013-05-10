@@ -2,7 +2,7 @@
 xsetroot -cursor_name left_ptr
 
 if [ -f "$HOME/.fehbg" ]; then
-   eval "$(cat ~/.fehbg)"
+   eval "$(cat $HOME/.fehbg)"
 fi
 
 # Notification tray--tint 0x191970 
