@@ -35,4 +35,10 @@ elif [ -x /usr/bin/gnome-sound-applet ] ; then
    /usr/bin/gnome-sound-applet &
 fi
 
+# screen auto-locking
+if [ -x /usr/bin/xautolock ] ; then
+   /usr/bin/xautolock -time 5 -locker "/usr/bin/gnome-screensaver-command -l" \
+      -corners "+-00" -notify 5 -notifier "/usr/bin/notify-send Locking..." &
+fi
+
 # vim: set syntax=sh ts=3 sts=3 sw=3 et:
