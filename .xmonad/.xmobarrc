@@ -15,7 +15,7 @@ Config { font = "xft:DejaVu Sans Mono:size=7"
                                   , "-h", "green"
                                   , "-m", "yellow"
                                   , "-p", "blue"
-                                  , "-c", "charge_full"
+                                  , "-c", "energy_full"
                                   ]
                                   10
                     , Run Date "%a %b %_d %l:%M" "date" 10
