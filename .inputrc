@@ -1,3 +1,10 @@
-# Home/End
-"\e[1~": beginning-of-line
-"\e[4~": end-of-line
+$include /etc/inputrc
+
+# Non-breaking space translate to space
+"\xC2\xA0": " "
+
+# Smartquotes to regular quotes
+"\xE2\x80\x98": "'"
+"\xE2\x80\x99": "'"
+"\xE2\x80\x9C": "\""
+"\xE2\x80\x9D": "\""
