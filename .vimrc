@@ -36,6 +36,9 @@ set expandtab
 set autoindent
 set smartindent
 
+" But also make smartindent not terrible for Python comments
+inoremap # X#
+
 " Make backspace work nicely
 set backspace=indent,eol,start
 
