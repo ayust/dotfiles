@@ -28,9 +28,12 @@ myManageHook = composeAll
     , isFullscreen --> doFullFloat
     ]
 
+myUrgencyHook = SpawnUrgencyHook "~/bin/urgency_hook "
+myUrgencyConfig = urgencyConfig { suppressWhen = Visible }
+
 main = do
     xmproc <- spawnPipe "/usr/bin/xmobar $HOME/.xmonad/.xmobarrc"
-    xmonad $ withUrgencyHook NoUrgencyHook defaultConfig
+    xmonad $ withUrgencyHookC myUrgencyHook myUrgencyConfig $ defaultConfig
         { manageHook = manageDocks <+> myManageHook
                         <+> manageHook defaultConfig
         , layoutHook = avoidStruts  $  smartBorders  $  layoutHook defaultConfig
@@ -38,7 +41,7 @@ main = do
         , logHook = dynamicLogWithPP xmobarPP
                         { ppOutput = hPutStrLn xmproc
                         , ppTitle = xmobarColor "green" "" . shorten 50
-                        , ppUrgent = xmobarColor "yellow" "red" . xmobarStrip
+                        , ppUrgent = xmobarColor "red" "" . xmobarStrip
                         }
         , modMask = mod4Mask     -- Rebind Mod to the Windows key
         , terminal = "terminator"
