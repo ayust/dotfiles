@@ -9,7 +9,10 @@ if filereadable($HOME . "/.vim/autoload/pathogen.vim")
 endif
 
 " UTF-8 is the future
-set encoding=utf8
+set encoding=utf-8
+setglobal fileencoding=utf-8
+set nobomb
+set fileencodings=ucs-bom,utf-8,iso-8859-1
 
 " Default to unix EOLs, but handle others gracefully
 set ffs=unix,dos,mac
@@ -28,11 +31,19 @@ set ruler
 " And enable mouse support to prevent copying line numbers, etc
 set mouse=a
 
+" Display last line even if too long; use <xx>
+set display=lastline,uhex
+
+" Display invisible characters
+set listchars=tab:↹·,extends:⇉,precedes:⇇,nbsp:␠,trail:␠,nbsp:␣
+
 " Use 'tabs are actually 4 spaces' and intelligent indenting
 set tabstop=8
 set softtabstop=2
 set shiftwidth=2
+set shiftround
 set expandtab
+set smarttab
 set autoindent
 set smartindent
 
@@ -45,6 +56,9 @@ set backspace=indent,eol,start
 " Incremental search with intelligent case-sensitivity
 set incsearch
 set ignorecase smartcase
+
+" When moving the screen, keep some context
+set scrolloff=2
 
 " Tab completion when in insert mode and not indenting
 function! CleverTab()
@@ -65,6 +79,10 @@ filetype plugin on
 
 " Ignore compiled files when completing paths
 set wildignore=*.o,*~,*.pyc,*.pyo,*.class,*.hi
+
+" Persistent undo
+set undodir=~/.vim/undo
+set undofile
 
 
 " KEYBINDINGS
@@ -102,6 +120,9 @@ iabbrev adn and
 iabbrev tehn then
 iabbrev taht that
 iabbrev tahn than
+
+" Also expand %% in command mode to same dir as current file
+cabbr <expr> %% expand('%:.:h')
 
 
 " TRIGGERED ACTIONS
