@@ -35,5 +35,7 @@ if os.path.exists(full % name):
                '<fc=%(scolor)s>)</fc>') % {'scolor': scolor,
                                            'ccolor': ccolor,
                                            'percent': charge * 100}
+else:
+    print 'n/a'
 
 # vim: set ts=4 sts=4 sw=4 et:
