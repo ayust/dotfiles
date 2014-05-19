@@ -7,3 +7,6 @@
 [submodule ".vim/bundle/vim-syntastic"]
 	path = .vim/bundle/vim-syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule ".vim/bundle/tabular"]
+	path = .vim/bundle/tabular
+	url = git://github.com/godlygeek/tabular.git
