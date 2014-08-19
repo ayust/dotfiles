@@ -52,6 +52,7 @@ main = do
         , ((mod4Mask .|. shiftMask, xK_g), focusUrgent)
         , ((mod4Mask .|. shiftMask, xK_q), quitWithWarning)
         , ((mod4Mask, xK_b), sendMessage ToggleStruts)
+        , ((mod4Mask, xK_quoteleft), spawn "~/bin/touchpad-toggle")
         , ((0, xF86XK_AudioLowerVolume), spawn "/usr/bin/amixer set Master 2dB-")
         , ((0, xF86XK_AudioRaiseVolume), spawn "/usr/bin/amixer set Master 2dB+")
         , ((0, xF86XK_AudioMute), spawn "/usr/bin/amixer set Master toggle")
