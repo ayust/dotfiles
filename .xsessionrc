@@ -41,4 +41,9 @@ if [ -x /usr/bin/xautolock ] ; then
       -corners "+-00" -notify 5 -notifier "/usr/bin/notify-send Locking..." &
 fi
 
+# disable touchpad while typing
+if [ -x /usr/bin/syndaemon ] ; then
+   /usr/bin/syndaemon -d -K -i 1 &
+fi
+
 # vim: set syntax=sh ts=3 sts=3 sw=3 et:
