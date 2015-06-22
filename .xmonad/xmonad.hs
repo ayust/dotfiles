@@ -31,11 +31,11 @@ myManageHook = composeAll
 myUrgencyHook = SpawnUrgencyHook "~/bin/urgency_hook "
 myUrgencyConfig = urgencyConfig { suppressWhen = Visible }
 
-myConfig = withUrgencyHookC myUrgencyHook myUrgencyConfig $ defaultConfig
+myConfig = withUrgencyHookC myUrgencyHook myUrgencyConfig $ ewmh defaultConfig
     { manageHook = manageDocks <+> myManageHook
                     <+> manageHook defaultConfig
     , layoutHook = avoidStruts  $  smartBorders  $  layoutHook defaultConfig
-    , handleEventHook = fullscreenEventHook
+    , handleEventHook = handleEventHook defaultConfig <+> fullscreenEventHook
     , startupHook = do
         startupHook myConfig
         spawn "/usr/bin/xcompmgr"
