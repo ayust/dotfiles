@@ -22,7 +22,7 @@ set lazyredraw
 
 " 256 colors and syntax highlighting
 set t_Co=256
-colorscheme xoria256
+colorscheme space-vim-dark
 syntax on
 
 " Turn on line numbering and position indicators...
@@ -146,6 +146,9 @@ augroup vimrc
     exe "normal `z"
   endfunc
   autocmd BufWrite *.py :call DeleteTrailingWS()
+
+  " Force .md to be markdown
+  autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
   " Automatically reload .vimrc when it is saved
   autocmd BufWritePost $MYVIMRC source $MYVIMRC
