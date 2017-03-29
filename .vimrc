@@ -153,14 +153,3 @@ augroup vimrc
   " Automatically reload .vimrc when it is saved
   autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END
-
-
-" GOOGLE-SPECIFIC FUNCTIONALITY
-""""""""""""""""""""""""""""""""""""""""""""""""""
-if filereadable("/usr/share/vim/google/google.vim")
-  source /usr/share/vim/google/google.vim
-endif
-if filereadable("/usr/share/vim/google/gtags.vim")
-  source /usr/share/vim/google/gtags.vim
-  nnoremap <C-]> :call Gtag(expand('<cword>'))<CR>
-endif
