@@ -84,6 +84,9 @@ set wildignore=*.o,*~,*.pyc,*.pyo,*.class,*.hi
 set undodir=~/.vim/undo
 set undofile
 
+" Readable wrapping
+set wrap linebreak
+
 
 " KEYBINDINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""
