@@ -3,10 +3,7 @@
 	url = https://github.com/airblade/vim-gitgutter.git
 [submodule ".vim/bundle/vim-easymotion"]
 	path = .vim/bundle/vim-easymotion
-	url = git://github.com/Lokaltog/vim-easymotion.git
-[submodule ".vim/bundle/vim-syntastic"]
-	path = .vim/bundle/vim-syntastic
-	url = https://github.com/scrooloose/syntastic.git
+	url = https://github.com/easymotion/vim-easymotion.git
 [submodule ".vim/bundle/tabular"]
 	path = .vim/bundle/tabular
-	url = git://github.com/godlygeek/tabular.git
+	url = https://github.com/godlygeek/tabular.git
